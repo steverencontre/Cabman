@@ -4,17 +4,18 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui widgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += c++1z
 
 TARGET = Cabman
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        MainWindow.cpp
+        MainWindow.cpp \
+    CixRequest.cpp
 
-HEADERS  += MainWindow.h
+HEADERS  += MainWindow.h \
+    CixRequest.h
 
-FORMS    += MainWindow.ui

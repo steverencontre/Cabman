@@ -3,20 +3,30 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class MainWindow;
-}
+#include <QListView>
+#include <QTreeView>
+#include <QTextBrowser>
+#include <QWidget>
+#include <QSplitter>
 
 class MainWindow : public QMainWindow
-{
-  Q_OBJECT
+  {
+	Q_OBJECT
 
-public:
-  explicit MainWindow(QWidget *parent = 0);
-  ~MainWindow();
+  public:
+	explicit MainWindow();
+	~MainWindow();
 
-private:
-  Ui::MainWindow *ui;
-};
+  private:
+
+	QSplitter			  *m_LRSplitter;
+	QSplitter			  *m_TopicOutboxSplitter;
+	QSplitter			  *m_MessagePaneSplitter;
+	QTreeView			  *m_TopicsView;
+	QListView			  *m_OutboxView;
+	QTreeView			  *m_MessagesView;
+	QTextBrowser	  *m_MessageView;
+
+  };
 
 #endif // MAINWINDOW_H
