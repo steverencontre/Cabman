@@ -9,15 +9,21 @@
 #include <QWidget>
 #include <QSplitter>
 
+#include "Settings.h"
+#include "CixModel.h"
+
 class MainWindow : public QMainWindow
-  {
+{
 	Q_OBJECT
 
-  public:
+public:
 	explicit MainWindow();
-	~MainWindow();
+	~MainWindow() override;
 
-  private:
+public slots:
+	void	onConfTopicsUpdated();
+
+private:
 
 	QSplitter			  *m_LRSplitter;
 	QSplitter			  *m_TopicOutboxSplitter;
@@ -27,6 +33,9 @@ class MainWindow : public QMainWindow
 	QTreeView			  *m_MessagesView;
 	QTextBrowser	  *m_MessageView;
 
-  };
+	Settings					m_Settings;
+	Cix::Model			  *m_CixModel;
+
+};
 
 #endif // MAINWINDOW_H

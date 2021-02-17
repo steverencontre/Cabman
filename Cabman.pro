@@ -4,18 +4,23 @@
 #
 #-------------------------------------------------
 
-QT       += core gui widgets
+QT       += core gui widgets webenginewidgets network networkauth
 
-CONFIG += c++1z
+#CONFIG += c++20
+QMAKE_CXXFLAGS += -std=c++20
 
 TARGET = Cabman
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        MainWindow.cpp \
-    CixRequest.cpp
+    CixModel.cpp \
+    CixNetworkIo.cpp \
+    MainWindow.cpp \
+    Settings.cpp
 
 HEADERS  += MainWindow.h \
-    CixRequest.h
+  CixModel.h \
+  CixNetworkIo.h \
+  Settings.h
 
